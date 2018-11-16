@@ -7,30 +7,84 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="Dmytro Kryshenyk" />
     <meta name="description" content="test template" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
     <link href="css/style.css" type="text/css" rel="stylesheet" />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,600i,700,800|Roboto:400,900,900i"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,600i,700,800|Roboto:100, 400,900,900i"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="main">
-      <div class="header">
+    <main class="main">
+      <header class="header">
         <a href="#" class="logo_link" title="link to main page"> <h1 class="logo">Mart</h1> </a>
-        <ul class="menu_list">
-          <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Home</a></li>
-          <li class="menu_item"><a href="#" class="menu_item_link" title="link to">About Us</a></li>
-          <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Page</a></li>
-          <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Shop</a></li>
-          <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Blog</a></li>
-          <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Contact Us</a></li>
-        </ul>
+        <nav class="nav">
+          <ul class="menu_list">
+            <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Home</a></li>
+            <li class="menu_item"><a href="#" class="menu_item_link" title="link to">About Us</a></li>
+            <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Page</a></li>
+            <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Shop</a></li>
+            <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Blog</a></li>
+            <li class="menu_item"><a href="#" class="menu_item_link" title="link to">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+    </main>
+
+    <div class="slider">
+      <div class="slider_item">
+        <img class="slider_img" src="img/slider-img-01.jpg" alt="slider image" />
+        <section class="slider_item_content">
+          <h5 class="slider_item_title">AFFORDABLE PARIS TOURS</h5>
+          <p class="slider_item_subtitle">CITY TOURS / TOUR TICKETS / TOUR GUIDES</p>
+        </section>
       </div>
+      <div class="slider_item">
+        <img class="slider_img" src="img/slider-img-02.jpg" alt="slider image" />
+        <section class="slider_item_content">
+          <h5 class="slider_item_title">AFFORDABLE PARIS TOURS</h5>
+          <p class="slider_item_subtitle">CITY TOURS / TOUR TICKETS / TOUR GUIDES</p>
+        </section>
+      </div>
+      <div class="slider_item">
+        <img class="slider_img" src="img/slider-img-03.jpg" alt="slider image" />
+        <section class="slider_item_content">
+          <h5 class="slider_item_title">AFFORDABLE PARIS TOURS</h5>
+          <p class="slider_item_subtitle">CITY TOURS / TOUR TICKETS / TOUR GUIDES</p>
+        </section>
+      </div>
+    </div>
 
+    <main class="main">
       <div class="content">
-        <div class="product">
-          <h5 class="content_title product_title">Featured Products</h5>
+        <div class="product poduct_new">
+          <h5 class="content_title product_title">New Products</h5>
+          <ul class="product_list">
+            <li class="product_item">
+              <a href="#" class="product_link" title="link to this product">
+                <div class="product_img_wrapper">
+                  <img src="img/product-new-1.jpg" alt="product image" class="product_img" />
+                  <div class="product_actions_wrapper">
+                    <ul class="product_actions_list">
+                      <li class="product_actions_item"></li>
+                      <li class="product_actions_item"></li>
+                      <li class="product_actions_item"></li>
+                      <li class="product_actions_item"></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product_info">
+                  <h3 class="product_name">Blue TShirt</h3>
+                  <p class="product_price">$26</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
 
+        <div class="product poduct_featured">
+          <h5 class="content_title product_title">Featured Products</h5>
           <ul class="product_list">
             <li class="product_item">
               <a href="#" class="product_link" title="link to this product">
@@ -160,6 +214,16 @@
           </article>
         </div>
       </div>
-    </div>
+    </main>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".slider").slick();
+      });
+    </script>
   </body>
 </html>

@@ -14,6 +14,8 @@ ul {
 
 body {
   min-height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 80px;
 }
 
 /* font-family: 'Open Sans', sans-serif;
@@ -22,13 +24,10 @@ font-family: 'Roboto', sans-serif; */
 .main {
   margin: auto;
   width: 1110px;
-  padding-top: 30px;
-  padding-bottom: 80px;
-  min-height: 100vh;
 }
 
 .header {
-  margin-bottom: 86px;
+  margin-bottom: 25px;
 }
 
 .header::after {
@@ -80,8 +79,84 @@ font-family: 'Roboto', sans-serif; */
   color: #1abc9c;
 }
 
+.slider {
+  margin-bottom: 86px;
+  
+}
+
+.slider_item {
+  overflow: hidden;
+  position: relative;
+
+}
+
+.slider_img {
+  display: block;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.slider_item_content {
+  position: absolute;
+  width: 1110px;
+  top: 205px;
+  padding: 0 120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider_item_title {
+  font: 60px "Roboto", sans-serif;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.slider_item_subtitle {
+  font: 24px "Roboto", sans-serif;
+  font-weight: 100;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 225px;
+  z-index: 999;
+  height: 104px;
+  width: 104px;
+  border: 0;
+  outline: 0;
+  font-size: 0;
+}
+
+.slick-prev {
+  left: 50%;
+  transform: translateX(-555px);
+  background: url(../img/stroke-prev.png) no-repeat center, rgba(26, 188, 156, 0.615);
+}
+
+
+
+.slick-next {
+  left: 50%;
+  transform: translateX(calc(-100% + 555px));
+  background: url(../img/stroke-next.png) no-repeat center, rgba(26, 188, 156, 0.615);
+
+}
+
+
+
 .product {
   margin-bottom: 64px;
+}
+
+.poduct_new .product_img_wrapper {
+  background: #ffffff;
 }
 
 .content_title {
@@ -139,6 +214,7 @@ font-family: 'Roboto', sans-serif; */
 .product_img_wrapper {
   background-color: #e9f0fd;
   overflow: hidden;
+  position: relative;
 }
 
 .product_img {
@@ -146,8 +222,28 @@ font-family: 'Roboto', sans-serif; */
   margin: auto;
   width: 100%;
   object-fit: contain;
-  padding: 20px;
   height: 282px;
+}
+
+.product_actions_wrapper {
+  position: absolute;
+  border: 10px solid transparent;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.product_actions_list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+/* Те, що нижче удали */
+  width: 166px;
+  height: 10px;
+  background: red;
 }
 
 .product_info {

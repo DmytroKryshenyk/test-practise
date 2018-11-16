@@ -15,11 +15,9 @@ ul {
 body {
   min-height: 100vh;
   padding-top: 30px;
-  padding-bottom: 80px;
+  padding-bottom: 180px;
+  position: relative;
 }
-
-/* font-family: 'Open Sans', sans-serif;
-font-family: 'Roboto', sans-serif; */
 
 .main {
   margin: auto;
@@ -81,13 +79,11 @@ font-family: 'Roboto', sans-serif; */
 
 .slider {
   margin-bottom: 86px;
-  
 }
 
 .slider_item {
   overflow: hidden;
   position: relative;
-
 }
 
 .slider_img {
@@ -140,16 +136,11 @@ font-family: 'Roboto', sans-serif; */
   background: url(../img/stroke-prev.png) no-repeat center, rgba(26, 188, 156, 0.615);
 }
 
-
-
 .slick-next {
   left: 50%;
   transform: translateX(calc(-100% + 555px));
   background: url(../img/stroke-next.png) no-repeat center, rgba(26, 188, 156, 0.615);
-
 }
-
-
 
 .product {
   margin-bottom: 64px;
@@ -203,9 +194,9 @@ font-family: 'Roboto', sans-serif; */
   background-color: #7fd9c7;
 }
 
-/* .product_item:nth-last-child(-n+4) {
-    margin-bottom: 0;
-} */
+.product_item:hover .product_actions_wrapper {
+  display: block;
+}
 
 .product_link {
   display: block;
@@ -227,7 +218,8 @@ font-family: 'Roboto', sans-serif; */
 
 .product_actions_wrapper {
   position: absolute;
-  border: 10px solid transparent;
+  display: none;
+  border: 10px solid rgba(255, 255, 255, 0.829);
   top: 0;
   width: 100%;
   height: 100%;
@@ -239,11 +231,52 @@ font-family: 'Roboto', sans-serif; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 164px;
+}
 
-/* Те, що нижче удали */
-  width: 166px;
-  height: 10px;
-  background: red;
+.product_actions_item {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ffffff;
+  margin-right: 7px;
+  vertical-align: bottom;
+}
+
+.product_actions_item:last-child {
+  width: 100%;
+  margin-top: 7px;
+  background: #323232;
+}
+
+.product_actions_item:nth-last-child(-n + 2) {
+  margin-right: 0;
+}
+
+.product_action_button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.product_action_button:hover {
+  background: #1abc9c;
+}
+
+.product_action_icon {
+  vertical-align: middle;
+}
+
+.product_action_text {
+  display: inline-block;
+  font: 14px "Open Sans", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 48px;
+  margin-left: 10px;
 }
 
 .product_info {
@@ -347,4 +380,19 @@ font-family: 'Roboto', sans-serif; */
   color: #ffffff;
   font: 300 16px/51px "Open Sans", sans-serif;
   border-radius: 2px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #323232;
+  height: 80px;
+  text-align: center;
+  font: 16px/80px "Open Sans", sans-serif;
+  color: #fefefe;
+}
+
+.copyright_author {
+  color: #46bfa9;
 }

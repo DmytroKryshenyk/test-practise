@@ -1,0 +1,289 @@
+:root {
+  --main_pink: #f38181;
+  --main_yellow: #fce38a;
+  --main_lightgreen: #eaffd0;
+  --main_title_color: #333333;
+  --main_text-color: #999999;
+  --main_lightblue: #95e1d3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.page_wrapper {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 62px;
+  min-height: 100vh;
+}
+
+.main {
+  width: 1200px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 115px;
+}
+
+.logo_link {
+  font: 700 30px "Montserrat", sans-serif;
+  color: var(--main_lightblue);
+}
+
+.nav_item {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.nav_item:last-child {
+  margin-right: 0px;
+}
+
+.nav_item_link {
+  display: block;
+  border-bottom: 3px solid transparent;
+  font: 400 14px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: var(--main_lightblue);
+  position: relative;
+}
+
+.nav_item_link:hover {
+  color: var(--main_pink);
+}
+
+.nav_item_link:hover::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  border-bottom: 3px solid var(--main_pink);
+  bottom: -12px;
+}
+
+.technologies {
+  margin-bottom: 83px;
+}
+
+.content_subtitle,
+.content_title {
+  text-align: center;
+  color: var(--main_title_color);
+}
+
+.content_subtitle {
+  font: 24px "Kaushan Script", cursive;
+  margin-bottom: 8px;
+}
+
+.content_title {
+  font: 700 30px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 102px;
+  position: relative;
+}
+
+.content_title::after {
+  content: " ";
+  position: absolute;
+  bottom: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  border-bottom: 3px solid var(--main_pink);
+}
+
+.technologies_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.technologies_item {
+  display: flex;
+  flex-basis: 32.08%;
+  margin-bottom: 93px;
+}
+
+.technologies_item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
+.technologies_item_icon_wrapper {
+  flex-basis: 22%;
+  flex-shrink: 0;
+}
+
+.technologies_item_icon {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  padding-top: 3px;
+}
+
+.technologies_item_title {
+  font: 400 14px "Montserrat", sans-serif;
+  color: var(--main_title_color);
+  text-transform: uppercase;
+  margin-bottom: 11px;
+}
+
+.technologies_item_text {
+  font: 400 15px "Roboto", sans-serif;
+  color: var(--main_text-color);
+  line-height: 1.6;
+}
+
+.team {
+  padding-bottom: 83px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.team_title {
+  margin-bottom: 78px;
+}
+
+.team_descrition {
+  color: var(--main_text-color);
+  font: 400 15px "Roboto", sans-serif;
+  line-height: 1.6;
+  padding: 0 110px;
+  text-align: center;
+  margin-bottom: 88px;
+}
+
+.team_member_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.team_member {
+  flex-basis: 31.66%;
+}
+
+.team_member_img_wrapper {
+  height: 470px;
+  margin-bottom: 27px;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.team_member_img_wrapper::after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--main_lightblue);
+  z-index: -1;
+}
+
+.team_member_img_wrapper:hover {
+  transform: translate(-10px, -10px);
+}
+
+.team_member_img_wrapper:hover .team_social_wrapper {
+  display: flex;
+}
+
+.team_member_img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.team_social_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.team_social_wrapper:hover {
+  opacity: 1;
+}
+
+.social_list {
+  background: #f9bd87;
+}
+
+.social_item {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1px;
+}
+
+.social_item:first-child {
+  margin-left: 0px;
+}
+
+.social_item_link {
+  display: flex;
+  width: 55px;
+  height: 55px;
+  background: var(--main_yellow);
+  justify-content: center;
+  align-items: center;
+}
+
+.social_item_link:hover {
+  background: var(--main_lightblue);
+}
+
+.team_member_name {
+  font: 400 14px "Montserrat", sans-serif;
+  color: var(--main_title_color);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.team_member_position {
+  font: 300 italic 15px "Roboto", sans-serif;
+  color: var(--main_text-color);
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 62px;
+  display: flex;
+  width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font: 14px "Montserrat", sans-serif;
+  color: var(--main_title_color);
+}
+
+.copyright_company {
+  color: var(--main_pink);
+}

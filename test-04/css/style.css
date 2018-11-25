@@ -1,3 +1,13 @@
+/* 
+font-family: 'Open Sans', sans-serif;
+font-family: 'PT Sans', sans-serif; 
+font-family: "Georgia";
+font-family: "Georgia-Bold";
+font-family: "Georgia-Bold-Italic";
+font-family: "Georgia-Italic";
+
+*/
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,6 +16,7 @@
 
 a {
   text-decoration: none;
+  color: #000000;
 }
 
 ul {
@@ -76,9 +87,118 @@ ul {
 
 :root {
   --main-blue: #4f4d6a;
+  --main-violet: #9c8394;
 }
 
-p {
-  font-size: 30px;
-  background: lightblue;
+.header_banner_wrapper {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(125, 185, 232, 0) 50%),
+    linear-gradient(100deg, rgba(165, 162, 255, 0.2) 0%, rgba(255, 166, 202, 0.2) 100%),
+    linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 40%,
+      rgba(255, 255, 255, 0.5) 70%,
+      rgba(255, 255, 255, 0.9) 100%
+    ),
+    url(../img/header-and-banner-background.jpg) no-repeat;
+  background-size: cover;
+  padding-bottom: 612px;
+}
+
+.content {
+  width: 960px;
+  margin: auto;
+  -outline: 1px solid red;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 114px;
+}
+
+.logo_link {
+  display: block;
+  font: 36px "Georgia", serif;
+  color: var(--main-blue);
+}
+
+.logo_link::first-letter {
+  font-family: "Georgia-Italic", serif;
+}
+
+.nav_item {
+  display: inline-block;
+  margin-left: 27px;
+}
+
+.nav_item:first-child {
+  margin-left: 0;
+}
+
+.nav_item_link {
+  font: 700 12px "PT Sans", sans-serif;
+  color: var(--main-blue);
+  text-transform: uppercase;
+}
+
+.banner {
+}
+
+.banner_subtitle {
+  font: 24px "Georgia-Italic", serif;
+  color: var(--main-blue);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 0.01em;
+}
+
+.banner_title {
+  font: 125px "Georgia-Bold", serif;
+  color: var(--main-blue);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+}
+
+.banner_explanation {
+  font: 700 18px "Open Sans", sans-serif;
+  color: var(--main-blue);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin-bottom: 70px;
+}
+
+.banner_actions {
+  text-align: center;
+}
+
+.banner_links {
+  display: inline-block;
+  height: 44px;
+  width: 220px;
+  font: 18px "Georgia-Italic", serif;
+  line-height: 44px;
+  letter-spacing: -0.005em;
+  color: #ffffff;
+  margin-left: 17px;
+  border: 1px solid var(--main-blue);
+  border-radius: 20px;
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3), 0px 1px 0px 0px rgba(0, 0, 0, 0.13);
+}
+
+.banner_links:first-child {
+  margin-left: 0;
+}
+
+.banner_link_portfolio {
+  background: var(--main-blue) linear-gradient(0deg, var(--main-blue) 0%, #6e6c8a 100%);
+}
+
+.banner_link_team {
+  background: var(--main-violet) linear-gradient(180deg, var(--main-violet) 0%, #6e6c8a 100%);
 }

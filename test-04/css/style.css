@@ -108,7 +108,6 @@ ul {
 .content {
   width: 960px;
   margin: auto;
-  -outline: 1px solid red;
 }
 
 .header {
@@ -146,38 +145,67 @@ ul {
 .banner {
 }
 
-.banner_subtitle {
+.main_subtitle {
   font: 24px "Georgia-Italic", serif;
   color: var(--main-blue);
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 15px;
   letter-spacing: 0.01em;
+  padding: 0 20px;
+  position: relative;
 }
 
-.banner_title {
+.main_subtitle::before,
+.main_subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  width: 408px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.main_subtitle::before {
+  left: 0;
+}
+
+.main_subtitle::after {
+  right: 0;
+}
+
+.main_title {
   font: 125px "Georgia-Bold", serif;
   color: var(--main-blue);
   text-transform: uppercase;
-  text-align: center;
   letter-spacing: -0.025em;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .banner_explanation {
   font: 700 18px "Open Sans", sans-serif;
   color: var(--main-blue);
   text-transform: uppercase;
-  text-align: center;
   letter-spacing: 0.01em;
   margin-bottom: 70px;
+  text-align: center;
+  position: relative;
 }
 
-.banner_actions {
+.banner_explanation::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  border-bottom: 1px solid #ffffff;
+}
+
+.actions {
   text-align: center;
 }
 
-.banner_links {
+.actions_links {
   display: inline-block;
   height: 44px;
   width: 220px;
@@ -191,14 +219,167 @@ ul {
   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3), 0px 1px 0px 0px rgba(0, 0, 0, 0.13);
 }
 
-.banner_links:first-child {
+.actions_links:first-child {
   margin-left: 0;
 }
 
-.banner_link_portfolio {
+.actions_link_portfolio {
   background: var(--main-blue) linear-gradient(0deg, var(--main-blue) 0%, #6e6c8a 100%);
 }
 
-.banner_link_team {
+.actions_link_team {
   background: var(--main-violet) linear-gradient(180deg, var(--main-violet) 0%, #6e6c8a 100%);
+}
+
+.portfolio {
+  background: #ebebeb;
+  padding: 66px 0 100px 0;
+}
+
+.portfolio_subtitle {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.portfolio_title {
+  font-size: 72px;
+  margin-bottom: 52px;
+  position: relative;
+}
+
+.portfolio_title::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: -23px;
+  left: 0;
+  border-bottom: 1px solid #ffffff;
+}
+
+.portfolio_list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 79px;
+  position: relative;
+}
+
+.portfolio_list::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: -37px;
+  left: 0;
+  border-bottom: 1px solid #ffffff;
+}
+
+.portfolio_item {
+  flex-basis: 22.9%;
+  margin-top: 20px;
+}
+
+.portfolio_item:nth-child(-n + 4) {
+  margin-top: 0;
+}
+
+.portfolio_item_img_wrapper {
+  margin-bottom: 16px;
+}
+
+.portfolio_item_img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  padding: 23.5px;
+  border-radius: 50%;
+  background: #efefef;
+}
+
+.portfolio_item_title {
+  margin-bottom: 7px;
+}
+
+.portfolio_item_title,
+.portfolio_item_description {
+  font: 22px "Georgia-Italic", serif;
+  color: var(--main-blue);
+}
+
+.portfolio_item_description {
+  font-size: 12px;
+  line-height: 1.917;
+}
+
+.inspiration {
+  padding: 57px 0 85px 0;
+}
+
+.inspiration_title {
+  font: 24px "Georgia-Italic", serif;
+  color: var(--main-blue);
+  margin-bottom: 20px;
+  padding-left: 8px;
+}
+
+.inspiration_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.inspiration_item {
+  flex-basis: 300px;
+}
+
+.inspiration_item_description {
+  font: 12px "Georgia-Italic", serif;
+  color: var(--main-blue);
+  line-height: 1.917;
+  margin-bottom: 25px;
+}
+
+.inspiration_item_link {
+  display: block;
+  height: 22px;
+  width: 100px;
+  background: var(--main-blue);
+  font: 12px/22px "Georgia-Bold-Italic", serif;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.footer_wrapper {
+  background: #505050;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px 10px 85px 10px;
+}
+
+.footer_inspiration {
+  flex-basis: 575px;
+}
+
+.footer_titles {
+  font: 24px "Georgia-Italic", serif;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.footer_text {
+  font: 12px "Open Sans", sans-serif;
+  color: #ffffff;
+  line-height: 2;
+}
+
+.contact {
+  flex-basis: 295px;
+}
+
+.copyright {
+  flex-basis: 100%;
+  margin-top: 42px;
 }

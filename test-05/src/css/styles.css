@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  .container {
+    background: teal;
+    padding: 10px;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    animation-name: bg;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite
+  }
+  
+  .box {
+    background: yellow;
+    flex-basis: 100px;
+    margin-right: 5px;
+  }
+  
+  @keyframes bg {
+    15% {
+      background: red;
+    }
+  
+    60% {
+      background: green;
+    }
+  
+    90% {
+      background: orange;
+    }
+  
+    100% {
+      background: teal;
+    }
+  }
+  
+  

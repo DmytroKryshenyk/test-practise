@@ -1,4 +1,3 @@
-const gulp = require("gulp");
 const htmlmin = require("gulp-htmlmin");
 const cssnano = require("gulp-cssnano");
 

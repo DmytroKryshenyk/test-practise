@@ -1,0 +1,10 @@
+$blabla: #424242;
+$tratra: #dd1212;
+
+h {
+    color: $blabla;
+    &:hover {
+        color: $tratra;
+        background: green;
+    }
+}

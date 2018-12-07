@@ -1,12 +1,119 @@
-@import url("_fonts.scss");
+@import "_fonts";
+@import url("../normalize.css");
 
-$font-HN-heavy: 'Helvetica Neue Heavy', sans-serif ;
-$font-HN-medium: 'Helvetica Neue Medium';
-$font-HN-roman: 'Helvetica Neue Roman';
-$font-HN-condBold: 'Helvetica Neue Condensed Bold', sans-serif ;
-$font-Humanis777BT-roman : "Humanist777BT Roman", sans-serif;
+$font-HN-heavy: "Helvetica Neue Heavy", sans-serif;
+$font-HN-medium: "Helvetica Neue Medium";
+$font-HN-roman: "Helvetica Neue Roman";
+$font-HN-condBold: "Helvetica Neue Condensed Bold", sans-serif;
+$font-Humanis777BT-roman: "Humanist777BT Roman", sans-serif;
 $font-Arial-regular: "ArialRegular", sans-serif;
 $font-Arial-bold: "ArialBold", sans-serif;
-$font-Georgia-regular: 'Georgia', serif;
-$fonts-Harlow-Solid: "Harlow Solid", 
+$font-Georgia-regular: "Georgia", serif;
+$fonts-Harlow-Solid: "Harlow Solid";
 
+@mixin content-type-one {
+  width: 930px;
+  background: #272d37 url("../img/content-background-1.jpg");
+  background-size: cover;
+}
+
+@mixin absolute-center-hor {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin absolute-center-vert {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main {
+  padding: 50px;
+  background: #363d47 url("../img/main-background.jpg");
+  block-size: cover;
+}
+
+.main_title {
+  font: bold 30px $font-HN-condBold;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.content {
+  margin: auto;
+  border: 1px solid #42474b;
+}
+
+.arrow_block {
+  height: 350px;
+  @include content-type-one;
+  position: relative;
+}
+
+.arrow_nav_list {
+  text-align: center;
+}
+
+.arrow_nav_item {
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -25px;
+    z-index: 2;
+    
+    top: 50%;
+    height: 24px;
+    width: 24px;
+    transform: rotate(45deg) translateX(-18px);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    // background: linear-gradient(135deg, rgba(113, 5, 10, 1) 0%, rgba(231, 55, 66, 1) 100%);;
+  }
+
+  &:first-child::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 0;
+    height: 37px;
+    width: 32px;
+    border-radius: 50% 0 0 50%;
+    background: linear-gradient(to bottom, rgba(113, 5, 10, 1) 0%, rgba(231, 55, 66, 1) 100%);
+  }
+
+  &:last-child::after {
+    content: "";
+    position: absolute;
+    right: -16px;
+    top: 0;
+    height: 37px;
+    border: none;
+    width: 32px;
+    border-radius: 0 50% 50% 0;
+    transform: rotate(0deg);
+    background: linear-gradient(to bottom, rgba(113, 5, 10, 1) 0%, rgba(231, 55, 66, 1) 100%);
+  }
+}
+
+.arrow_nav_item_link {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 37px;
+  font: 12px/37px $font-HN-heavy;
+  background: linear-gradient(to bottom, rgba(113, 5, 10, 1) 0%, rgba(231, 55, 66, 1) 100%);
+  padding: 0 25px;
+}

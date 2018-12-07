@@ -1,1 +1,155 @@
-h{color:#424242}h:hover{color:orange;background:pink}
+@charset "UTF-8";
+@import url("../normalize.css");
+@font-face {
+  font-family: bold "Helvetica Neue Condensed Bold";
+  src: url("../fonts/HelveticaNeue-CondensedBold.eot");
+  src: url("../fonts/HelveticaNeue-CondensedBold.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue-CondensedBold.woff") format("woff"), url("../fonts/HelveticaNeue-CondensedBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Heavy";
+  src: url("../fonts/HelveticaNeueHeavy.eot");
+  src: url("../fonts/HelveticaNeueHeavy.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueHeavy.woff") format("woff"), url("../fonts/HelveticaNeueHeavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Medium";
+  src: url("../fonts/HelveticaNeue-Medium.eot");
+  src: url("../fonts/HelveticaNeue-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue-Medium.woff") format("woff"), url("../fonts/HelveticaNeue-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Roman";
+  src: url("../fonts/HelveticaNeue-Roman.eot");
+  src: url("../fonts/HelveticaNeue-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue-Roman.woff") format("woff"), url("../fonts/HelveticaNeue-Roman.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Humanist777BT Roman";
+  src: url("../fonts/Humanist777BT-Roman.eot");
+  src: local("☺"), url("../fonts/Humanist777BT-Roman.woff") format("woff"), url("../fonts/Humanist777BT-Roman.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ArialRegular";
+  src: url("../fonts/ArialRegular.eot");
+  src: url("../fonts/ArialRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/ArialRegular.woff") format("woff"), url("../fonts/ArialRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ArialBold";
+  src: url("../fonts/ArialBold.eot");
+  src: url("../fonts/ArialBold.eot?#iefix") format("embedded-opentype"), url("../fonts/ArialBold.woff") format("woff"), url("../fonts/ArialBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url("..fonts/Georgia.eot");
+  src: url("..fonts/Georgia.eot?#iefix") format("embedded-opentype"), url("..fonts/Georgia.woff") format("woff"), url("..fonts/Georgia.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Harlow Solid";
+  src: url("../fonts/HarlowSolid.eot");
+  src: url("../fonts/HarlowSolid.eot?#iefix") format("embedded-opentype"), url("../fonts/HarlowSolid.woff") format("woff"), url("../fonts/HarlowSolid.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main {
+  padding: 50px;
+  background: #363d47 url("../img/main-background.jpg");
+  block-size: cover;
+}
+
+.main_title {
+  font: bold 30px "Helvetica Neue Condensed Bold", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.content {
+  margin: auto;
+  border: 1px solid #42474b;
+}
+
+.arrow_block {
+  height: 350px;
+  width: 930px;
+  background: #272d37 url("../img/content-background-1.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.arrow_nav_list {
+  text-align: center;
+}
+
+.arrow_nav_item {
+  display: inline-block;
+  position: relative;
+}
+
+.arrow_nav_item::after {
+  content: "";
+  position: absolute;
+  right: -25px;
+  z-index: 2;
+  top: 50%;
+  height: 24px;
+  width: 24px;
+  transform: rotate(45deg) translateX(-18px);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.arrow_nav_item:first-child::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 0;
+  height: 37px;
+  width: 32px;
+  border-radius: 50% 0 0 50%;
+  background: linear-gradient(to bottom, #71050a 0%, #e73742 100%);
+}
+
+.arrow_nav_item:last-child::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 0;
+  height: 37px;
+  border: none;
+  width: 32px;
+  border-radius: 0 50% 50% 0;
+  transform: rotate(0deg);
+  background: linear-gradient(to bottom, #71050a 0%, #e73742 100%);
+}
+
+.arrow_nav_item_link {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 37px;
+  font: 12px/37px "Helvetica Neue Heavy", sans-serif;
+  background: linear-gradient(to bottom, #71050a 0%, #e73742 100%);
+  padding: 0 25px;
+}

@@ -4,12 +4,15 @@
   "description": "blablabla",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "startall": "gulp startall",
+    "startall:watch" : "gulp startall:watch"
   },
   "author": "Dimoson\u001b[D\u001b[D\u001b[a",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-sass": "^4.0.2"
   }
 }

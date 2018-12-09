@@ -86,24 +86,29 @@
 
 .content {
   margin: auto;
-  border: 1px solid #42474b;
+  margin-bottom: 40px;
 }
 
-.arrow_block {
+.arrow_nav {
   height: 350px;
+  border: 1px solid #42474b;
   width: 930px;
   background: #272d37 url("../img/content-background-1.jpg");
   background-size: cover;
-  position: relative;
 }
 
 .arrow_nav_list {
   text-align: center;
+  overflow: hidden;
+  top: 170px;
+  position: relative;
+  top: 170px;
 }
 
 .arrow_nav_item {
   display: inline-block;
   position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .arrow_nav_item::after {
@@ -111,12 +116,14 @@
   position: absolute;
   right: -25px;
   z-index: 2;
+  border-radius: 3px;
   top: 50%;
   height: 24px;
   width: 24px;
   transform: rotate(45deg) translateX(-18px);
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 2px -2px 0px 2px rgba(0, 0, 0, 0.25);
 }
 
 .arrow_nav_item:first-child::before {
@@ -127,20 +134,25 @@
   height: 37px;
   width: 32px;
   border-radius: 50% 0 0 50%;
-  background: linear-gradient(to bottom, #71050a 0%, #e73742 100%);
+  background: linear-gradient(to top, #71050a 0%, #e73742 100%);
 }
 
 .arrow_nav_item:last-child::after {
   content: "";
   position: absolute;
-  right: -16px;
+  right: -20px;
   top: 0;
   height: 37px;
   border: none;
   width: 32px;
   border-radius: 0 50% 50% 0;
   transform: rotate(0deg);
-  background: linear-gradient(to bottom, #71050a 0%, #e73742 100%);
+  background: linear-gradient(to top, #71050a 0%, #e73742 100%);
+  box-shadow: none;
+}
+
+.arrow_nav_item:first-child .arrow_nav_item_link {
+  padding-left: 20px;
 }
 
 .arrow_nav_item_link {
@@ -150,6 +162,140 @@
   text-transform: uppercase;
   height: 37px;
   font: 12px/37px "Helvetica Neue Heavy", sans-serif;
-  background: linear-gradient(to bottom, #71050a 0%, #e73742 100%);
-  padding: 0 25px;
+  background: linear-gradient(to top, #71050a 0%, #e73742 100%);
+  padding: 0 12px 0 37px;
+}
+
+.grey {
+  height: 487px;
+  width: 930px;
+  background: #272d37 url("../img/content-background-1.jpg");
+  background-size: cover;
+}
+
+.grey_nav {
+  position: relative;
+  top: 130px;
+  width: 800px;
+  margin: auto;
+  background: #acb3bf linear-gradient(to bottom, #acb3bf 0%, #c5cad4 100%);
+  border: 1px solid #d5d7d9;
+  border-radius: 3px;
+  padding: 1px 20px;
+}
+
+.grey_nav::after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.grey_nav_list {
+  float: left;
+}
+
+.grey_nav_item {
+  display: inline-block;
+}
+
+.grey_nav_item:first-child .grey_nav_item_link {
+  padding-left: 0;
+}
+
+.grey_nav_item_link {
+  display: block;
+  height: 40px;
+  padding: 0 15px;
+  color: #363d47;
+  text-decoration: none;
+  border-right: 1px solid #a4a9b5;
+  box-shadow: 1px 0px 0px 0px #e2e8f3;
+  font: 13px/40px "Helvetica Neue Medium";
+  text-shadow: -1px 1px 0px #e2e8f3;
+}
+
+.grey_search_form {
+  float: right;
+  line-height: 40px;
+}
+
+.grey_search_label {
+  position: relative;
+}
+
+.grey_search_label::after {
+  content: url(../img/search-icon.png);
+  position: absolute;
+  right: 5px;
+  padding-top: 2px;
+}
+
+.grey_search_input {
+  height: 25px;
+  background: #e4e6eb;
+  border-top: 1px solid #a6abb3;
+  border-right: 1px solid #d8dadf;
+  border-bottom: 1px solid #e4e6ec;
+  border-left: 1px solid #cdcfd5;
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 6px -2px #c9ccd3;
+  outline: none;
+  font: 13px "Helvetica Neue Roman";
+  color: #363d47;
+  text-shadow: -1px 1px 0px #e2e8f3;
+  padding-left: 13px;
+}
+
+.double_nav {
+  width: 828px;
+  background: #272d37 url("../img/content-background-1.jpg");
+  background-size: cover;
+  height: 519px;
+}
+
+.first_nav {
+  text-align: center;
+}
+
+.first_nav_item {
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.first_nav_item:first-child {
+  margin-left: 0;
+}
+
+@keyframes nav-transition {
+  0% {
+    background: red;
+  }
+  25% {
+    background: #fffb00;
+  }
+  50% {
+    background: #00ff0d;
+  }
+  75% {
+    background: #2f00ff;
+  }
+  99.99% {
+    background: red;
+  }
+}
+
+.first_nav_item_link {
+  font: 13px/25px "ArialRegular", sans-serif;
+  color: #e9ecf1;
+  text-decoration: none;
+  height: 25px;
+  width: 108px;
+  display: block;
+  background: #6b6b6b;
+  border-radius: 2px;
+}
+
+.first_nav_item_link:hover {
+  animation: nav-transition 3s linear infinite;
 }

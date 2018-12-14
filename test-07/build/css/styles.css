@@ -1,0 +1,153 @@
+@import url("../normalize.css");
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/montserrat-latin-regular.woff2") format("woff2"), url("../fonts/montserrat-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/montserrat-latin-700.woff2") format("woff2"), url("../fonts/montserrat-latin-700.woff") format("woff");
+}
+
+/* montserrat-900 - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Montserrat Black"), local("Montserrat-Black"), url("../fonts/montserrat-latin-900.woff2") format("woff2"), url("../fonts/montserrat-latin-900.woff") format("woff");
+}
+
+@font-face {
+  font-family: "DroidSerif-Italic";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/droid-serif-italic.woff") format("woff"), url("../fonts/droid-serif-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url("../fonts/roboto-slab-latin-regular.woff2") format("woff2"), url("../fonts/roboto-slab-latin-regular.woff") format("woff");
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "Wisdom-Script";
+  src: url("../fonts/WisdomScript.woff") format("woff"), url("../fonts/WisdomScript.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.content {
+  width: 940px;
+  margin: auto;
+  outline: 1px solid red;
+}
+
+.header {
+  padding-left: 5px;
+  margin-bottom: 113px;
+}
+
+.header::after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.logo {
+  font: 26px/1.2 "Wisdom-Script";
+  color: #fed136;
+  text-decoration: none;
+  float: left;
+  letter-spacing: 0.05em;
+}
+
+.nav {
+  float: right;
+  padding-top: 15px;
+}
+
+.nav_item {
+  display: inline-block;
+}
+
+.nav_item:not(:first-child) {
+  margin-left: 39px;
+}
+
+.nav_item_link {
+  text-decoration: none;
+  font: 700 14px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #222222;
+}
+
+.nav_item_link:hover {
+  color: #fed136;
+}
+
+.main_title {
+  font: bold 40px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+}
+
+.advantages_title {
+  color: #222222;
+}
+
+.main_subtitle {
+  font: 16px "DroidSerif-Italic", serif;
+  text-align: center;
+  color: #777777;
+  margin-bottom: 76px;
+}
+
+.advantages_list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.advantages_item {
+  flex-basis: 31%;
+}
+
+.advantages_item_img_wrapper {
+  margin-bottom: 22px;
+}
+
+.advantages_item_img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.advantages_item_title {
+  font: 700 18px "Montserrat", sans-serif;
+  color: #222222;
+  text-align: center;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+
+.advantages_item_description {
+  font: 14px/22px "Roboto Slab", serif;
+  color: #777777;
+  text-align: center;
+}
+
+.contact_wrapper {
+  background-color: #222222;
+  background-image: url(../img/background-map.png);
+}

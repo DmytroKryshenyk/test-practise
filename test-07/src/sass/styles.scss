@@ -1,0 +1,123 @@
+@import "_fonts";
+@import url("../normalize.css");
+
+$main-gold: #fed136;
+$main-dark-grey: #222222;
+$main-grey: #777777;
+$main-light-grey: #bbbbbb;
+$montserrat: "Montserrat", sans-serif;
+$droid-serif-italic: "DroidSerif-Italic", serif;
+$roboto-slab: "Roboto Slab", serif;
+$wisdom: "Wisdom-Script";
+
+@mixin clearfix {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.content {
+  width: 940px;
+  margin: auto;
+  outline: 1px solid red;
+}
+
+.header {
+  padding-left: 5px;
+  margin-bottom: 113px;
+
+  &::after {
+    @include clearfix;
+  }
+}
+
+.logo {
+  font: 26px/1.2 $wisdom;
+  color: $main-gold;
+  text-decoration: none;
+  float: left;
+  letter-spacing: 0.05em;
+}
+
+.nav {
+  float: right;
+  padding-top: 15px;
+}
+
+.nav_item {
+  display: inline-block;
+
+  &:not(:first-child) {
+    margin-left: 39px;
+  }
+}
+
+.nav_item_link {
+  text-decoration: none;
+  font: 700 14px $montserrat;
+  text-transform: uppercase;
+  color: $main-dark-grey;
+
+  &:hover {
+    color: $main-gold;
+  }
+}
+
+.main_title {
+  font: bold 40px $montserrat;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+}
+
+.advantages_title {
+  color: $main-dark-grey;
+}
+
+.main_subtitle {
+  font: 16px $droid-serif-italic;
+  text-align: center;
+  color: $main-grey;
+  margin-bottom: 76px;
+}
+
+.advantages_list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.advantages_item {
+  flex-basis: 31%;
+}
+
+.advantages_item_img_wrapper {
+  margin-bottom: 22px;
+}
+
+.advantages_item_img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.advantages_item_title {
+  font: 700 18px $montserrat;
+  color: $main-dark-grey;
+  text-align: center;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+
+.advantages_item_description {
+  font: 14px/22px $roboto-slab;
+  color: $main-grey;
+  text-align: center;
+}
+
+.contact_wrapper {
+    background-color: $main-dark-grey ;
+    background-image: url(../img/background-map.png)
+}

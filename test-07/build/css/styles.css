@@ -47,7 +47,6 @@
 .content {
   width: 940px;
   margin: auto;
-  outline: 1px solid red;
 }
 
 .header {
@@ -88,6 +87,7 @@
   font: 700 14px "Montserrat", sans-serif;
   text-transform: uppercase;
   color: #222222;
+  transition: color linear 0.1s;
 }
 
 .nav_item_link:hover {
@@ -99,17 +99,24 @@
   text-transform: uppercase;
   text-align: center;
   letter-spacing: -0.025em;
-  margin-bottom: 8px;
+}
+
+.advantages {
+  margin-bottom: 117px;
 }
 
 .advantages_title {
   color: #222222;
+  margin-bottom: 8px;
 }
 
 .main_subtitle {
   font: 16px "DroidSerif-Italic", serif;
   text-align: center;
   color: #777777;
+}
+
+.advantages_subtitle {
   margin-bottom: 76px;
 }
 
@@ -148,6 +155,89 @@
 }
 
 .contact_wrapper {
-  background-color: #222222;
-  background-image: url(../img/background-map.png);
+  background: url(../img/background-map.png) 100% 85% no-repeat, #222222;
+}
+
+.contact {
+  padding: 100px 0 115px 0;
+}
+
+.contact_title {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.contact_subtitle {
+  margin-bottom: 75px;
+}
+
+.contact_form_data_wrapper {
+  margin-bottom: 31px;
+}
+
+.contact_form_data_wrapper::after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.contact_form_inputs_wrapper {
+  float: left;
+  width: 48.4%;
+}
+
+.contact_form_inputs {
+  display: block;
+  width: 100%;
+  height: 52px;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  padding-left: 18px;
+}
+
+.contact_form_inputs:not(:last-child) {
+  margin-bottom: 27px;
+}
+
+.contact_form_inputs::placeholder {
+  font: 700 14px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #bbbbbb;
+}
+
+.contact_form_message_wrapper {
+  float: right;
+  width: 48.4%;
+}
+
+.contact_form_message {
+  display: block;
+  width: 100%;
+  height: 210px;
+  resize: none;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  padding: 15px 18px;
+}
+
+.contact_form_message::placeholder {
+  font: 700 14px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #bbbbbb;
+}
+
+.contact_form_submit {
+  display: block;
+  width: 240px;
+  height: 65px;
+  margin: auto;
+  border: 0;
+  outline: none;
+  border-radius: 2px;
+  font: 700 18px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #fed136;
 }

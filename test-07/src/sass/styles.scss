@@ -20,7 +20,6 @@ $wisdom: "Wisdom-Script";
 .content {
   width: 940px;
   margin: auto;
-  outline: 1px solid red;
 }
 
 .header {
@@ -58,6 +57,7 @@ $wisdom: "Wisdom-Script";
   font: 700 14px $montserrat;
   text-transform: uppercase;
   color: $main-dark-grey;
+  transition: color linear 0.1s;
 
   &:hover {
     color: $main-gold;
@@ -69,17 +69,24 @@ $wisdom: "Wisdom-Script";
   text-transform: uppercase;
   text-align: center;
   letter-spacing: -0.025em;
-  margin-bottom: 8px;
+}
+
+.advantages {
+  margin-bottom: 117px;
 }
 
 .advantages_title {
   color: $main-dark-grey;
+  margin-bottom: 8px;
 }
 
 .main_subtitle {
   font: 16px $droid-serif-italic;
   text-align: center;
   color: $main-grey;
+}
+
+.advantages_subtitle {
   margin-bottom: 76px;
 }
 
@@ -118,6 +125,88 @@ $wisdom: "Wisdom-Script";
 }
 
 .contact_wrapper {
-    background-color: $main-dark-grey ;
-    background-image: url(../img/background-map.png)
+  background: url(../img/background-map.png) 100% 85% no-repeat, $main-dark-grey;
 }
+
+.contact {
+  padding: 100px 0 115px 0;
+}
+
+.contact_title {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.contact_subtitle {
+  margin-bottom: 75px;
+}
+
+.contact_form_data_wrapper {
+  margin-bottom: 31px;
+}
+
+.contact_form_data_wrapper::after {
+  @include clearfix;
+}
+
+.contact_form_inputs_wrapper {
+  float: left;
+  width: 48.4%;
+}
+
+.contact_form_inputs {
+  display: block;
+  width: 100%;
+  height: 52px;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  padding-left: 18px;
+
+  &:not(:last-child) {
+    margin-bottom: 27px;
+  }
+
+  &::placeholder {
+    font: 700 14px $montserrat;
+    text-transform: uppercase;
+    color: $main-light-grey;
+  }
+}
+
+.contact_form_message_wrapper {
+  float: right;
+  width: 48.4%;
+}
+
+.contact_form_message {
+  display: block;
+  width: 100%;
+  height: 210px;
+  resize: none;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  padding: 15px 18px;
+
+  &::placeholder {
+    font: 700 14px $montserrat;
+    text-transform: uppercase;
+    color: $main-light-grey;
+  }
+}
+
+.contact_form_submit {
+  display: block;
+  width: 240px;
+  height: 65px;
+  margin: auto;
+  border: 0;
+  outline: none;
+  border-radius: 2px;
+  font: 700 18px $montserrat;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #fed136;
+}
+
+

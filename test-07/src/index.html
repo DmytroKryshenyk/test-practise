@@ -68,6 +68,19 @@
           <article class="contact">
             <h3 class="contact_title main_title">Contact Us</h3>
             <p class="contact_subtitle main_subtitle">Proin iaculis purus consequat sem cure.</p>
+            <form action="#" class="contact_form" method="POST">
+              <div class="contact_form_data_wrapper">
+                <div class="contact_form_inputs_wrapper">
+                  <input type="text" name="name" class="contact_form_inputs contact_form_name" placeholder="Your name*" required >
+                  <input type="email" name="email" class="contact_form_inputs contact_form_email" placeholder="Your e-mail*" required>
+                  <input type="text" name="subject" class="contact_form_inputs contact_form_subject" placeholder="Subject">
+                </div>
+                <div class="contact_form_message_wrapper">
+                  <textarea name="message" class="contact_form_message" placeholder="Your message*" required></textarea>
+                </div>
+              </div>
+              <button class="contact_form_submit" type="submit">Send Massage</button>
+            </form>
           </article>
         </div>
       </div>

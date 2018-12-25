@@ -1,0 +1,28 @@
+@import "fonts.scss";
+@import "normalize.css";
+
+$light-red: #ff4e50;
+$font-roboto: "Roboto", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
+
+
+@mixin list_none_decoration {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin link_none_decoration {
+    text-decoration: none;
+    color: #000000;
+}
+
+.logIn_signUp_item {
+    @include list_none_decoration;
+    display: inline-block;
+}
+
+.logIn_signUp_links {
+    @include link_none_decoration;
+}
+

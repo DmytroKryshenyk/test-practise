@@ -1,5 +1,5 @@
 /* roboto-300 - latin */
-@import url(normalize.css);
+@import url("../normalize.css");
 @font-face {
   font-family: "Roboto";
   font-style: normal;
@@ -44,6 +44,40 @@
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+body {
+  padding: 5px;
+}
+
+.main {
+  width: 320px;
+  margin: auto;
+}
+
+.header_wrapper {
+  background: url("../img/main-background.jpg") no-repeat center, rgba(0, 0, 0, 0.1);
+  background-blend-mode: darken;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logIn_signUp {
+  order: -1;
+  margin-bottom: 115px;
+}
+
+.logo {
+  font: bold 20px/1.2 "Montserrat", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
 .logIn_signUp_item {
   list-style-type: none;
   padding: 0;
@@ -52,6 +86,37 @@
 }
 
 .logIn_signUp_links {
-  text-decoration: none;
-  color: #000000;
+  font: bold 13px/30px "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+.signUp_link {
+  border: 2px solid #ffffff;
+  border-radius: 17px;
+  display: block;
+  height: 36px;
+  width: 90px;
+  margin-left: 17px;
+  text-align: center;
+}
+
+.header_banner {
+  padding: 28px 20px 0 20px;
+}
+
+.header_banner_title {
+  font: bold 30px/1.2 "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  word-spacing: 0px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header_banner_subtitle {
+  font: 18px/1.2 "Montserrat", sans-serif;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 12px;
 }

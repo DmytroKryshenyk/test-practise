@@ -11,22 +11,20 @@ $font-montserrat: "Montserrat", sans-serif;
   margin: 0;
 }
 
-
 body {
-    padding: 5px;
+  padding: 5px;
 }
 
-.main {
-  width: 320px;
+.content {
   margin: auto;
+  width: 320px;
+  outline: 1px solid lightblue;
 }
 
 .header_wrapper {
-  background: url("../img/main-background.jpg") no-repeat center, rgba(0, 0, 0, 0.1);
+  background: url("../img/main-background.jpg") no-repeat center, rgba(0, 0, 0, 0.2);
+  background-size: cover;
   background-blend-mode: darken;
-  // background-size: cover;
-  // no-repeat center cover
-  // url("../img/main-background.jpg"),
 }
 
 .header {
@@ -35,7 +33,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 0 138px 0;
 }
 
 .logIn_signUp {
@@ -55,7 +53,7 @@ body {
 }
 
 .logIn_signUp_links {
-  font: bold 13px/30px "Montserrat", sans-serif;
+  font: bold 13px/33px "Montserrat", sans-serif;
   color: #ffffff;
 }
 
@@ -70,27 +68,75 @@ body {
 }
 
 @mixin header_banner_prop {
-    color: #ffffff;
-    text-align: center;
+  color: #ffffff;
+  text-align: center;
 }
 
 .header_banner {
-    padding: 28px 20px 0 20px;
+  padding: 28px 20px 0 20px;
 }
 
 .header_banner_title {
-    font: bold 30px/1.2 $font-montserrat;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    word-spacing: 0px;
-    @include header_banner_prop;
-    margin-bottom: 10px;
-        
+  font: bold 30px/1.2 $font-montserrat;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  word-spacing: 0px;
+  @include header_banner_prop;
+  margin-bottom: 9px;
 }
 
 .header_banner_subtitle {
-    font: 18px/1.2 $font-montserrat;
-    @include header_banner_prop;
-    padding: 0 12px;
-    
+  font: 300 18px/1.2 $font-roboto;
+  @include header_banner_prop;
+  padding: 0 25px;
+  margin-bottom: 15px;
+}
+
+.header_banner_link {
+  @include header_banner_prop;
+  display: block;
+  height: 40px;
+  width: 280px;
+  margin: auto;
+  background: $light-red;
+  font: bold 14px/40px $font-montserrat;
+  border-radius: 18px;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    width: 768px;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 49px 233px 49px;
+  }
+
+  .logIn_signUp {
+    order: 0;
+    margin-bottom: 0px;
+  }
+
+  .header_banner {
+    margin: auto;
+    padding: 0 40px;
+    margin-top: 140px;
+  }
+
+  .header_banner_title {
+    font-size: 52px;
+    margin-bottom: 24px;
+  }
+
+  .header_banner_subtitle {
+    font-size: 24px;
+    margin-bottom: 33px;
+  }
+
+  .header_banner_link {
+    width: 226px;
+  }
 }

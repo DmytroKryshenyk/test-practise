@@ -48,13 +48,15 @@ body {
   padding: 5px;
 }
 
-.main {
-  width: 320px;
+.content {
   margin: auto;
+  width: 320px;
+  outline: 1px solid lightblue;
 }
 
 .header_wrapper {
-  background: url("../img/main-background.jpg") no-repeat center, rgba(0, 0, 0, 0.1);
+  background: url("../img/main-background.jpg") no-repeat center, rgba(0, 0, 0, 0.2);
+  background-size: cover;
   background-blend-mode: darken;
 }
 
@@ -64,7 +66,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 0 138px 0;
 }
 
 .logIn_signUp {
@@ -86,7 +88,7 @@ body {
 }
 
 .logIn_signUp_links {
-  font: bold 13px/30px "Montserrat", sans-serif;
+  font: bold 13px/33px "Montserrat", sans-serif;
   color: #ffffff;
 }
 
@@ -111,12 +113,57 @@ body {
   word-spacing: 0px;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 .header_banner_subtitle {
-  font: 18px/1.2 "Montserrat", sans-serif;
+  font: 300 18px/1.2 "Roboto", sans-serif;
   color: #ffffff;
   text-align: center;
-  padding: 0 12px;
+  padding: 0 25px;
+  margin-bottom: 15px;
+}
+
+.header_banner_link {
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  height: 40px;
+  width: 280px;
+  margin: auto;
+  background: #ff4e50;
+  font: bold 14px/40px "Montserrat", sans-serif;
+  border-radius: 18px;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    width: 768px;
+  }
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 49px 233px 49px;
+  }
+  .logIn_signUp {
+    order: 0;
+    margin-bottom: 0px;
+  }
+  .header_banner {
+    margin: auto;
+    padding: 0 40px;
+    margin-top: 140px;
+  }
+  .header_banner_title {
+    font-size: 52px;
+    margin-bottom: 24px;
+  }
+  .header_banner_subtitle {
+    font-size: 24px;
+    margin-bottom: 33px;
+  }
+  .header_banner_link {
+    width: 226px;
+  }
 }

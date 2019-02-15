@@ -43,3 +43,138 @@
   src: local("Montserrat Black"), local("Montserrat-Black"), url("../fonts/montserrat-v12-latin-900.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+[class*="col-"] {
+  outline: 1px solid red;
+}
+
+.header_banner_wrapper {
+  background: url("../img/main-background.jpg") no-repeat center, rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-blend-mode: darken;
+  margin-bottom: 65px;
+}
+
+.container {
+  margin: auto;
+  width: 320px;
+  outline: 1px solid lightblue;
+}
+
+.header_logo_link {
+  font: bold 20px/1.2 "Montserrat", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.header_logo {
+  text-align: center;
+}
+
+.entrance {
+  text-align: center;
+}
+
+.entrance_item {
+  display: inline-block;
+}
+
+.entrance_item_link {
+  font: bold 13px/33px "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+.sign_up_link {
+  border: 2px solid #ffffff;
+  border-radius: 17px;
+  display: block;
+  height: 36px;
+  width: 90px;
+  margin-left: 19px;
+  text-align: center;
+}
+
+.banner_title {
+  font: bold 30px/1.2 "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  word-spacing: 0px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 9px;
+}
+
+.banner_subtitle {
+  font: 300 18px/1.2 "Roboto", sans-serif;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 25px;
+  margin-bottom: 15px;
+}
+
+.banner_link {
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  height: 40px;
+  width: 280px;
+  margin: auto;
+  background: #ff4e50;
+  font: bold 14px/40px "Montserrat", sans-serif;
+  border-radius: 20px;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .container {
+    width: 320px;
+  }
+  .header_banner_wrapper {
+    padding: 20px 0 138px 0;
+  }
+  .header {
+    margin-bottom: 27px;
+  }
+  .header_logo {
+    margin-top: 116px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 786px;
+    max-width: 786px;
+  }
+  .header_banner_wrapper {
+    padding: 37px 0px 233px 0px;
+  }
+  .header {
+    margin-bottom: 142px;
+  }
+  .banner_title {
+    font-size: 52px;
+    margin-bottom: 24px;
+  }
+  .banner_subtitle {
+    font-size: 24px;
+    margin-bottom: 33px;
+  }
+  .banner_link {
+    width: 226px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 940px;
+    max-width: 940px;
+  }
+  .header_logo {
+    text-align: left;
+    margin-left: -15px;
+  }
+  .entrance {
+    text-align: right;
+    margin-right: -15px;
+  }
+}

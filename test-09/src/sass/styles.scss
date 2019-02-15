@@ -6,3 +6,158 @@ $font-roboto: "Roboto", sans-serif;
 $font-montserrat: "Montserrat", sans-serif;
 $color-main-titles: #333333;
 $color-main-text: #666666;
+
+[class*="col-"] {
+  outline: 1px solid red;
+}
+
+@mixin header_banner_prop {
+  color: #ffffff;
+  text-align: center;
+}
+
+.header_banner_wrapper {
+  background: url("../img/main-background.jpg") no-repeat center, rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-blend-mode: darken;
+  margin-bottom: 65px;
+}
+
+.container {
+  margin: auto;
+  width: 320px;
+  outline: 1px solid lightblue;
+}
+
+.header_logo_link {
+  font: bold 20px/1.2 $font-montserrat;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.header_logo {
+  text-align: center;
+}
+
+.entrance {
+  text-align: center;
+}
+
+.entrance_item {
+  display: inline-block;
+}
+
+.entrance_item_link {
+  font: bold 13px/33px "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+.sign_up_link {
+  border: 2px solid #ffffff;
+  border-radius: 17px;
+  display: block;
+  height: 36px;
+  width: 90px;
+  margin-left: 19px;
+  text-align: center;
+}
+
+
+
+.banner_title {
+  font: bold 30px/1.2 $font-montserrat;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  word-spacing: 0px;
+  @include header_banner_prop;
+  margin-bottom: 9px;
+}
+
+.banner_subtitle {
+  font: 300 18px/1.2 $font-roboto;
+  @include header_banner_prop;
+  padding: 0 25px;
+  margin-bottom: 15px;
+}
+
+.banner_link {
+  @include header_banner_prop;
+  display: block;
+  height: 40px;
+  width: 280px;
+  margin: auto;
+  background: $color-main-buttons;
+  font: bold 14px/40px $font-montserrat;
+  border-radius: 20px;
+  letter-spacing: -0.3px;
+}
+
+/////////////////////////////////////////////
+// MEDIA
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .container {
+    width: 320px;
+  }
+
+  .header_banner_wrapper {
+    padding: 20px 0 138px 0;
+  }
+
+  .header {
+    margin-bottom: 27px;
+  }
+
+  .header_logo {
+    margin-top: 116px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 786px;
+    max-width: 786px;
+  }
+  
+
+  .header_banner_wrapper {
+    padding: 37px 0px 233px 0px;
+  }
+
+  .header {
+    margin-bottom: 142px;
+  }
+
+  .banner_title {
+    font-size: 52px;
+    margin-bottom: 24px;
+  }
+
+  .banner_subtitle {
+    font-size: 24px;
+    margin-bottom: 33px;
+  }
+
+  .banner_link {
+    width: 226px;
+  }
+}
+
+
+@media (min-width: 992px) {
+    .container {
+        width: 940px;
+        max-width: 940px;
+      }
+      
+      .header_logo {
+        text-align: left;
+        margin-left: -15px;
+      }
+
+      .entrance {
+        text-align: right;
+        margin-right: -15px;
+      }
+
+}

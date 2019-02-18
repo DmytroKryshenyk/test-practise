@@ -16,6 +16,10 @@ $color-main-text: #666666;
   text-align: center;
 }
 
+body {
+  padding-bottom: 40px;
+}
+
 .header_banner_wrapper {
   background: url("../img/main-background.jpg") no-repeat center, rgba(0, 0, 0, 0.2);
   background-size: cover;
@@ -62,8 +66,6 @@ $color-main-text: #666666;
   text-align: center;
 }
 
-
-
 .banner_title {
   font: bold 30px/1.2 $font-montserrat;
   text-transform: uppercase;
@@ -92,6 +94,68 @@ $color-main-text: #666666;
   letter-spacing: -0.3px;
 }
 
+.partners_title {
+  font: bold 22px/1.2 $font-montserrat;
+  text-align: center;
+  color: $color-main-titles;
+  margin-bottom: 14px;
+}
+
+.partners_item_img_wrapper {
+  margin-bottom: 17px;
+  position: relative;
+}
+
+.partners_item_img_wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% + 20px);
+  height: 41px;
+  width: 41px;
+  border-radius: 100%;
+  background: url(../img/member-icon-1.png);
+  background-size: cover;
+}
+
+.partners_item_img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  height: 122px;
+}
+
+.partners_list {
+  margin-bottom: 68px;
+}
+
+.partners_item_name {
+  font: bold 14px/1.2 $font-montserrat;
+  color: $color-main-titles;
+  text-align: center;
+  margin-bottom: 13px;
+} 
+
+.partners_item_description {
+  font: 14px/1.2 $font-roboto;
+  text-align: center;
+  color: $color-main-text;
+}
+
+.partners_link {
+  display: block;
+  width: 280px;
+  height: 40px;
+  text-align: center;
+  margin: auto;
+  font: bold 14px/40px $font-montserrat;
+  color: $color-main-buttons;
+  border: 2px solid $color-main-buttons;
+  border-radius: 20px;
+}
+
 /////////////////////////////////////////////
 // MEDIA
 
@@ -111,6 +175,10 @@ $color-main-text: #666666;
   .header_logo {
     margin-top: 116px;
   }
+
+  .partners_item:not(:last-child) {
+    margin-bottom: 26px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -118,7 +186,6 @@ $color-main-text: #666666;
     width: 786px;
     max-width: 786px;
   }
-  
 
   .header_banner_wrapper {
     padding: 37px 0px 233px 0px;
@@ -141,23 +208,29 @@ $color-main-text: #666666;
   .banner_link {
     width: 226px;
   }
+
+  .partners_item:not(:nth-last-child(-n + 2)) {
+    margin-bottom: 26px;
+  }
 }
 
-
 @media (min-width: 992px) {
-    .container {
-        width: 940px;
-        max-width: 940px;
-      }
-      
-      .header_logo {
-        text-align: left;
-        margin-left: -15px;
-      }
+  .container {
+    width: 940px;
+    max-width: 940px;
+  }
 
-      .entrance {
-        text-align: right;
-        margin-right: -15px;
-      }
+  .header_logo {
+    text-align: left;
+    margin-left: -15px;
+  }
 
+  .entrance {
+    text-align: right;
+    margin-right: -15px;
+  }
+
+  .partners_item:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
 }

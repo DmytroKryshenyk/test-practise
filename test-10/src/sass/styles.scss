@@ -1,19 +1,8 @@
 @import "fonts.scss";
 
-$draken_grey_color: #333333
+$draken_grey_color: #333333;
 $grey_color: #777777;
 $light_grey_color: #959595;
 $green-color: #071f08;
+$main-font: "Roboto", "Arial", sans-serif
 
-
-@mixin header_nav_font {
-    font: bold 14px "Roboto" sans-serif; 
-    color: $grey_color;
-    text-transform: uppercase;
-    line-height: 1.714;
-}
-
-h1 {
-    @include header_nav_font();
-}
-  

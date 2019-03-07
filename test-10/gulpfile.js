@@ -33,6 +33,14 @@ gulp.task("copyfonts", function() {
   return gulp.src("src/fonts/**/*.*").pipe(gulp.dest("build/fonts"));
 });
 
+gulp.task("copyjs", function() {
+  return gulp.src("src/js/**/*.*").pipe(gulp.dest("build/js"));
+});
+
+gulp.task("copyslick", function() {
+  return gulp.src("src/slick/**/*.*").pipe(gulp.dest("build/slick"));
+});
+
 gulp.task("htmlminify", () => {
   return gulp
     .src("src/*.html")

@@ -170,15 +170,10 @@
 }
 
 .container {
-  background: teal;
   min-width: 1140px;
 }
 
-[class*="col-"] {
-  background: orange;
-}
-
-.header {
+.header-nav {
   padding: 15px 0;
 }
 
@@ -209,7 +204,7 @@
 }
 
 .header_nav_links:hover {
-  color: #777777;
+  color: #000000;
 }
 
 .header_nav_links-active {
@@ -230,13 +225,12 @@
 
 .search_form {
   display: none;
-  top: calc(100% - 10px);
+  top: calc(100% - 15px);
   right: 0;
   width: 500px;
   text-align: right;
   padding: 15px 50px 50px 15px;
   margin-right: -50px;
-  outline: 1px solid red;
   z-index: 2;
 }
 
@@ -247,6 +241,11 @@
   outline: 1px solid #959595;
   background: #e7e7e7;
   color: #777777;
+}
+
+.search_input:focus {
+  outline: 1px solid #959595;
+  outline-offset: 0;
 }
 
 .search_submit {
@@ -262,4 +261,89 @@
 
 .search_submit:focus {
   outline: 0;
+}
+
+.header_banner_slider > .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: 1px solid #ffffff;
+  border-radius: 100%;
+  font-size: 0;
+  z-index: 2;
+  background-size: 24px;
+  background-repeat: no-repeat;
+}
+
+.header_banner_slider > .slick-arrow:hover {
+  background-color: #000000;
+  border: 1px solid #000000;
+}
+
+.header_banner_slider > .slick-arrow:focus {
+  outline: none;
+}
+
+.header_banner_slider > .slick-prev {
+  left: calc(50% - 664px);
+  background-image: url(../img/arrow-prev.svg);
+  background-position: 40%;
+}
+
+.header_banner_slider > .slick-next {
+  left: calc(50% + 664px);
+  background-image: url(../img/arrow-next.svg);
+  background-position: 60%;
+}
+
+.header_slider_item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header_slider_item_1 {
+  background-image: url(../img/banner-slider-img-1.jpg);
+}
+
+.header_slider_item_2 {
+  background-image: url(../img/banner-slider-img-2.jpg);
+}
+
+.header_slider_item_3 {
+  background-image: url(../img/banner-slider-img-3.jpg);
+}
+
+.container {
+  outline: 2px solid red;
+}
+
+.header_slider_item_content {
+  height: 350px;
+}
+
+.header_slider_item_content-home {
+  height: 650px;
+}
+
+.header_banner_title {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #000000;
+  font: 300 48px/1.1666 "Roboto", "Arial", sans-serif;
+  color: #ffffff;
+  padding: 0 40px;
+  letter-spacing: 7px;
+  margin-bottom: 35px;
+}
+
+.header_banner_subtitle {
+  flex-basis: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font: 18px "Roboto", "Arial", sans-serif;
+  letter-spacing: 8px;
 }

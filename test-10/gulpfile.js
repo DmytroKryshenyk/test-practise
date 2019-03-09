@@ -6,6 +6,17 @@ gulp.task("clean", function() {
   del.sync("./build");
 });
 
+gulp.task("htmlminify", () => {
+  return gulp
+    .src("src/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"));
+});
+
+gulp.task("htmlminify:watch", function() {
+  gulp.watch("src/*.html", gulp.series("htmlminify"));
+});
+
 gulp.task("sass", function() {
   return gulp
     .src("src/sass/**/*.scss")
@@ -15,6 +26,14 @@ gulp.task("sass", function() {
 
 gulp.task("sass:watch", function() {
   gulp.watch(["src/sass/**/*.sass", "src/sass/**/*.scss"], gulp.series("sass"));
+});
+
+gulp.task("js", function() {
+  return gulp.src("src/js/**/*.js").pipe(gulp.dest("build/js"));
+});
+
+gulp.task("js:watch", function() {
+  gulp.watch("src/js/**/*.js", gulp.series("js"));
 });
 
 gulp.task("copynormalize", function() {
@@ -33,23 +52,8 @@ gulp.task("copyfonts", function() {
   return gulp.src("src/fonts/**/*.*").pipe(gulp.dest("build/fonts"));
 });
 
-gulp.task("copyjs", function() {
-  return gulp.src("src/js/**/*.*").pipe(gulp.dest("build/js"));
-});
-
 gulp.task("copyslick", function() {
   return gulp.src("src/slick/**/*.*").pipe(gulp.dest("build/slick"));
-});
-
-gulp.task("htmlminify", () => {
-  return gulp
-    .src("src/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("build"));
-});
-
-gulp.task("htmlminify:watch", function() {
-  gulp.watch("src/*.html", gulp.series("htmlminify"));
 });
 
 // gulp.task("startall", ["sass", "htmlminify", "copynormalize", "copyimages", "copyfonts"]);
@@ -57,6 +61,7 @@ gulp.task("htmlminify:watch", function() {
 gulp.task("startall:watch", function() {
   gulp.watch(["src/sass/**/*.sass", "src/sass/**/*.scss"], gulp.series("sass"));
   gulp.watch("src/*.html", gulp.series("htmlminify"));
+  gulp.watch("src/js/**/*.js", gulp.series("js"));
   gulp.watch("src/fonts/**/*.*", gulp.series("copyfonts"));
   gulp.watch("src/img/**/*.*", gulp.series("copyimages"));
   gulp.watch("src/**/normalize.css", gulp.series("copynormalize"));

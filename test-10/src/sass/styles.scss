@@ -10,8 +10,12 @@ $main-font: "Roboto", "Arial", sans-serif;
   min-width: 1140px;
 }
 
+.header {
+  margin-bottom: 32px;
+}
+
 .header-nav {
-  padding: 15px 0;
+  padding: 27px 0;
 }
 
 .header_logo_link {
@@ -20,10 +24,6 @@ $main-font: "Roboto", "Arial", sans-serif;
 
 .header_logo_image {
   height: 35px;
-}
-
-.header_nav_list {
-  padding-top: 13px;
 }
 
 .header_nav_item {
@@ -98,6 +98,12 @@ $main-font: "Roboto", "Arial", sans-serif;
   &:focus {
     outline: 0;
   }
+}
+
+.header_slider_item {
+  -webkit-box-shadow: inset 0px 5px 10px -5px rgba(51, 51, 51, 0.75);
+  -moz-box-shadow: inset 0px 5px 10px -5px rgba(51, 51, 51, 0.75);
+  box-shadow: inset 0px 5px 10px -5px rgba(51, 51, 51, 0.75);
 }
 
 .header_banner_slider {
@@ -214,11 +220,28 @@ $main-font: "Roboto", "Arial", sans-serif;
   }
 }
 
-.product_tabs_list {
-  padding: 30px 0;
+.products {
+  padding-bottom: 73px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: inset 0px -5px 10px -5px #d6d6d6;
+  -moz-box-shadow: inset 0px -5px 10px -5px #d6d6d6;
+  box-shadow: inset 0px -5px 10px -5px #d6d6d6; 
 }
 
-.product_tabs_item {
+.products > .container > .row:first-child {
+  margin-bottom: 32px;
+}
+
+.products > .container > .row:nth-child(2) > [class*="col-"]:last-child {
+  margin-top: 36px;
+}
+
+.products_tabs_list {
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.products_tabs_item {
   margin-right: 36px;
   position: relative;
   color: $gray-color;
@@ -244,11 +267,11 @@ $main-font: "Roboto", "Arial", sans-serif;
   }
 }
 
-.product_list {
+.products_list {
   margin-bottom: 0;
 }
 
-.product_item {
+.products_item {
   margin-bottom: 34px;
 
   &:last-child {
@@ -266,22 +289,21 @@ $main-font: "Roboto", "Arial", sans-serif;
   }
 }
 
-.product_item_link:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5) url("../img/add-icon.png") no-repeat center;
-  
+.products_item_link:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5) url("../img/add-icon.png") no-repeat center;
 }
 
-.product_item_image {
+.products_item_image {
   max-width: 100%;
 }
 
-.product_more_button {
+.products_more_button {
   width: 125px;
   height: 30px;
   background: $light-gray-color;
@@ -290,9 +312,12 @@ $main-font: "Roboto", "Arial", sans-serif;
   border-radius: 2px;
   font: bold 13px $main-font;
   color: #ffffff;
-  
 
   &:focus {
     outline: none;
   }
+}
+
+.footer_logo_image {
+  height: 35px;
 }

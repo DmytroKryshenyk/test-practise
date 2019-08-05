@@ -8,8 +8,10 @@
       <ul v-for="(item, index, key) in info" :key="key">
         <li>
           <label
-            :class="[item.isValid ? 'valid': '', !item.isValid && item.value ? 'unvalid' : '']"
+            :class="{valid:item.isValid , unvalid:!item.isValid && item.value}"
           >{{ item.name }}</label>
+
+
 
           <input type="text" v-model="item.value" @input="isValidValue(index)" />
         </li>

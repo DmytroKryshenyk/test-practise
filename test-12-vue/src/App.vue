@@ -67,6 +67,7 @@ export default {
       const pattern = this.info[index].pattern;
       const value = this.info[index].value;
       this.info[index].isValid = pattern.test(value);
+      console.log(123)
     }
   },
   computed: {

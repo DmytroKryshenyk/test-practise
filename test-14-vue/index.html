@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Vue Learn</title>
+    <meta name="author" content="Dmytro Kryshenyk" />
+  </head>
+  <body>
+    <div id="app">
+      <form @submit.prevent="showSubmitInfo = true" v-if="!showSubmitInfo">
+        <progress-bar :progressbar="progressBar"></progress-bar>
+        <list :info="info" :is-valid-value="isValidValue"></list>
+        <button :disabled="progressBar !== 100" type="submit">Send Data</button>
+      </form>
+      <div v-else v-for="(item, key) in info" :key="key">
+        <p>{{ item.name }}: {{ item.value }}</p>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script>
+    Vue.component("progress-bar", {
+      template:
+        '<div class="progress"><div class="progress-bar" v-bind:style="{width: `${progressbar}%`}"></div></div>',
+      props: ["progressbar"]
+    });
+
+    Vue.component("list", {
+      template:
+        '<ul><li v-for="(item, index, key) in info" :key="key"><label :class="{valid:item.isValid, unvalid:!item.isValid && item.value}">{{item.name}}</label><input type="text" v-model="item.value" @input="isValidValue(index)" /></li></ul>',
+      props: ["info", "isValidValue"]
+    });
+
+    new Vue({
+      name: "App",
+      el: "#app",
+      data: {
+        info: [
+          {
+            name: "Name",
+            value: "",
+            pattern: /^[a-zA-Z ]{2,30}$/,
+            isValid: false
+          },
+          {
+            name: "Phone",
+            value: "",
+            pattern: /^[0-9]{7,14}$/,
+            isValid: false
+          },
+          {
+            name: "Email",
+            value: "",
+            pattern: /.+/,
+            isValid: false
+          },
+          {
+            name: "Some Field 1",
+            value: "",
+            pattern: /.+/,
+            isValid: false
+          },
+          {
+            name: "Some Field 2",
+            value: "",
+            pattern: /.+/,
+            isValid: false
+          }
+        ],
+        showSubmitInfo: false
+      },
+      methods: {
+        isValidValue(index) {
+          const pattern = this.info[index].pattern;
+          const value = this.info[index].value;
+          this.info[index].isValid = pattern.test(value);
+        }
+      },
+      computed: {
+        progressBar: function() {
+          const infoLength = this.info.length;
+          const percentFate = 100 / infoLength;
+          let progressBarPercent = 0;
+
+          this.info.forEach(element => {
+            if (element.isValid) progressBarPercent += percentFate;
+          });
+          return progressBarPercent;
+        }
+      }
+    });
+  </script>
+</html>

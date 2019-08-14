@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Vue Learn</title>
+    <meta name="author" content="Dmytro Kryshenyk" />
+  </head>
+  <body>
+    <div id="app">
+      <component :is="renderComponent"></component>  
+      <!-- Тут виведеться той компонент який нам вкаже метод renderComponent в полі computed -->
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script>
+    Vue.component("firstcomponent", {
+      template: "<p>Вивівся перший компонент</p>"
+    });
+
+    Vue.component("secondcomponent", {
+      template: "<p>Вивівся другий компонент</p>"
+    });
+
+    new Vue({
+      el: "#app",
+      data: {
+        isActive: true
+      },
+      computed: {
+        renderComponent() {
+          return this.isActive ? "firstcomponent" : "secondcomponent";
+        }
+      }
+    });
+  </script>
+</html>

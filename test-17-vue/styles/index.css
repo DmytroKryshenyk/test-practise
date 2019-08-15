@@ -1,0 +1,51 @@
+/* Спосатку someNazva по дефолту має opacity: 1 */
+
+/* Тут на початку анімації someNazva отримує opacity: 0 */
+.someNazva-enter {
+  opacity: 0;
+}
+
+/* Тут  і до завершення анімації появляння someNazva вертається до дефолтного opacity: 1 */
+.someNazva-enter-active {
+  transition: opacity 4s linear;
+}
+
+.someNazva-enter-to {
+}
+
+/* Тут someNazva вже має по дефолту opacity: 1*/
+.someNazva-leave {
+}
+
+/* Тут  і до завершення анімації зникання someNazva йде до opacity: 0 поки не пропаде з розмітки */
+.someNazva-leave-active {
+  transition: opacity 4s linear;
+  opacity: 0;
+}
+
+.someNazva-leave-to {
+  /* opacity: 0; */
+}
+
+/* ============================================================= */
+.slide {
+    background: yellow;
+    margin: 1px;
+}
+.slide-enter-active {
+  animation: slideIn 0.5s;
+}
+
+.slide-leave-active {
+  animation: slideOut 0.5s;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100vw) }
+  to { transform: translateX(0px) }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0px) }
+  to { transform: translateX(-100vw) }
+}

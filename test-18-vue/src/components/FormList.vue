@@ -1,7 +1,10 @@
 <template>
   <ul>
     <li v-for="(item, index, key) in info" :key="key">
-      <label :class="{valid:item.isValid, unvalid:!item.isValid && item.value}">{{item.name}}</label>
+      <label>{{item.name}}</label>
+
+      <i class="animated" :class="{'valid heartBeat':item.isValid, 'unvalid zoomIn ':!item.isValid && item.value}"></i>
+
       <input type="text" v-model="item.value" @input="isValidValue(index)" />
     </li>
   </ul>
@@ -23,41 +26,32 @@ li {
   list-style-type: none;
 }
 
+label {
+  display: inline-block;
+  margin-right: 5px;
+}
+
 input {
   width: 100%;
   display: block;
 }
 
-.valid {
-  position: relative;
+i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
 }
 
-.valid:after {
-  content: "";
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  top: 50%;
-  right: -15px;
-  transform: translateY(-50%);
+.valid {
   background: url("../assets/checked.svg") no-repeat;
   background-size: contain;
 }
 
 .unvalid {
-  position: relative;
-}
-
-.unvalid:after {
-  content: "";
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  top: 50%;
-  right: -15px;
-  transform: translateY(-50%);
   background: url("../assets/unvalid.svg") no-repeat;
   background-size: contain;
 }
+
 </style>
 

@@ -6,7 +6,7 @@
         <FormList :info="info" :is-valid-value="isValidValue" />
         <button :disabled="progressBar !== 100" type="submit">Send Data</button>
       </form>
-      <FormResults v-if="showSubmitInfo"e :info="info" />
+      <FormResults v-if="showSubmitInfo" :info="info" />
     </transition>
 
     <button @click="showSubmitInfo = !showSubmitInfo">click</button>
@@ -102,15 +102,21 @@ form {
 }
 
 @keyframes hideElement {
-  from {opacity: 0}
-  to {opacity: 1}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes showElement {
-  from {opacity: 1}
-  to {opacity: 0}
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
-
-
 </style>
 

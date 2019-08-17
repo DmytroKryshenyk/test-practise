@@ -1,12 +1,22 @@
 <template>
   <div>
-    <p>{{ this.$store.state.count }}</p>
+    <p>{{count}}</p>
+    <p>{{doubleCount }}</p>
+    <p>{{hundredMultiply}}</p>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "CountView",
+  computed: {
+    ...mapGetters(["doubleCount", "hundredMultiply"]),
+    count() {
+      return this.$store.state.count;
+    }
+  }
 };
 </script>
 

@@ -2,11 +2,15 @@
   <div id="app">
     <transition name="formResults" mode="out-in">
       <form v-if="!showSubmitInfo" @submit.prevent="changeshowSubmitInfo">
+        <h3>Заповніть форму англійською</h3>
         <FormProgressBar />
         <FormList />
-        <button :disabled="progressBar !== 100" type="submit">Send Data</button>
+        <button :disabled="isActiveSendButton" type="submit">Send Data</button>
       </form>
       <FormResults v-if="showSubmitInfo" />
+    </transition>
+    <transition name="loadingMessage">
+      <p v-if="asyncDataLoading">Відправка данних. Зачекайте</p>
     </transition>
   </div>
 </template>
@@ -25,7 +29,7 @@ export default {
   },
   methods: {
     changeshowSubmitInfo() {
-      this.$store.commit("changeshowSubmitInfo");
+      this.$store.dispatch("asyncShowResults");
     }
   },
   computed: {
@@ -34,6 +38,12 @@ export default {
     },
     progressBar() {
       return this.$store.getters.progressBar;
+    },
+    asyncDataLoading() {
+      return this.$store.state.asyncDataLoading;
+    },
+    isActiveSendButton() {
+      return (this.progressBar !== 100) || (this.asyncDataLoading) ;
     }
   }
 };
@@ -53,6 +63,19 @@ form {
 }
 
 .formResults-leave-active {
+  animation: showElement 0.5s;
+}
+
+p {
+  text-align: center;
+  color: red
+}
+
+.loadingMessage-enter-active {
+  animation: hideElement 0.5s;
+}
+
+.loadingMessage-leave-active {
   animation: showElement 0.5s;
 }
 

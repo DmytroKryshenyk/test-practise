@@ -8,13 +8,13 @@ export const store = new Vuex.Store({
   state: {
     info: [
       {
-        name: "Name",
+        name: "Ім’я",
         value: "",
         pattern: /^[a-zA-Z ]{2,30}$/,
         isValid: false
       },
       {
-        name: "Phone",
+        name: "Мобільний",
         value: "",
         pattern: /^[0-9]{7,14}$/,
         isValid: false
@@ -38,7 +38,8 @@ export const store = new Vuex.Store({
         isValid: false
       }
     ],
-    showSubmitInfo: false
+    showSubmitInfo: false,
+    asyncDataLoading: false
   },
   mutations: {
     changeValidStatus(state, payload) {
@@ -46,9 +47,6 @@ export const store = new Vuex.Store({
       const index = payload.index;
       const status = payload.status;
       state.info[index].isValid = status;
-    },
-    changeshowSubmitInfo(state) {
-      state.showSubmitInfo = !state.qshowSubmitInfo;
     },
     updateMessage(state, payload) {
       console.log("updateMessage в mutations запустився");
@@ -69,6 +67,15 @@ export const store = new Vuex.Store({
         }
       });
       return progressBarPercent;
+    }
+  },
+  actions: {
+    asyncShowResults(store) {
+      store.state.asyncDataLoading = true;
+      setTimeout(() => {
+        store.state.asyncDataLoading = false;
+        store.state.showSubmitInfo = !store.state.showSubmitInfo;
+      }, 3000);
     }
   }
 });

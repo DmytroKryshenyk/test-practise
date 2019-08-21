@@ -16,8 +16,8 @@ export default {
     },
 
     increaseProductQuantity(state, id) {
-        const productIndex = state.cartProducts.findIndex(elem => elem.id_product === id);
-        state.cartProducts[productIndex].quantity += 1;
+      const productIndex = state.cartProducts.findIndex(elem => elem.id_product === id);
+      state.cartProducts[productIndex].quantity += 1;
     },
 
     reduceProductQuantity(state, id) {
@@ -33,6 +33,5 @@ export default {
     cartProductList(state) {
       return state.cartProducts;
     }
-  },
-  actions: {}
+  }
 };

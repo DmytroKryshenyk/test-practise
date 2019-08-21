@@ -21,12 +21,16 @@
       </p>
     </div>
     <p v-if="cartProductList.length === 0" class="empty-cart-message">Ваш кошик порожній</p>
+    <Form v-if="cartProductList.length !== 0"/>
   </div>
 </template>
 
 <script>
+import Form from "./Form.vue";
+
 export default {
   name: "Checkout",
+  components: { Form },
   computed: {
     cartProductList() {
       return this.$store.getters["cart/cartProductList"];
@@ -60,8 +64,8 @@ td {
   font-size: 1.5rem;
 
   &-price {
-      font-weight: bold;
-      color: red;
+    font-weight: bold;
+    color: red;
   }
 }
 </style>

@@ -26,6 +26,12 @@
       </li>
     </ul>
     <p v-else class="empty-cart-message">Ваш кошик порожній</p>
+    <button
+      v-if="cartProductList.length > 0"
+      @click="$router.push('/checkout')"
+      type="button"
+      class="to-cart-btn"
+    >Перейти до списку покупок</button>
   </div>
 </template>
 
@@ -33,6 +39,9 @@
 export default {
   name: "Cart",
   computed: {
+    productList() {
+      return this.$store.getters["productList/productList"];
+    },
     cartProductList() {
       return this.$store.getters["cart/cartProductList"];
     }
@@ -45,10 +54,10 @@ export default {
 
     productQuantityActions(id, type) {
       if (type === "plus") {
-        const productInData = this.$store.state.productList.list.find(
+        const productInData = this.productList.find(
           elem => elem.id_product === id
         );
-        console.log(productInData);
+
         if (productInData.quantityInStock === 0) return;
         this.$store.commit("productList/removeProductFromStock", id);
         this.$store.commit("cart/increaseProductQuantity", id);
@@ -104,6 +113,15 @@ li {
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+.to-cart-btn {
+  background: #a5f08e;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
 }
 
 .empty-cart-message {

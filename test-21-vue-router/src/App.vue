@@ -11,26 +11,44 @@
             <router-link to="/cart" active-class="nav-link-active">Кошик</router-link>
           </li>
           <li>
-            <router-link to="/checkout" active-class="nav-link-active">Список покупки</router-link>
+            <router-link to="/checkout" active-class="nav-link-active">Список покупок</router-link>
           </li>
         </ul>
       </nav>
       <div class="container">
         <!-- Ниже тег <router-view> це тег замість якого нам покажеться компонент, який ми вибрали через <router-link>  -->
-        <router-view></router-view>
+        <transition
+          name="main-pages"
+          mode="out-in"
+          enter-active-class="animated bounceInLeft"
+          leave-active-class="animated bounceOutRight"
+        >
+          <router-view></router-view>
+        </transition>
       </div>
+
+      <AsyncPosts />
     </main>
   </div>
 </template>
 
 <script>
-import ProductList from "./components/ProductList.vue";
+import AsyncPosts from "./components/AsyncPosts.vue";
 
 export default {
   name: "App",
   components: {
-    ProductList
-  }
+    AsyncPosts
+  },
+  data() {
+    return {
+      users: null
+    }
+  },
+created() { //просто так для прикладу, запишем в поле наше поле users
+  this.$http.get('users/')
+    .then(response => this.someDataVlast = response.body )
+}
 };
 </script>
 

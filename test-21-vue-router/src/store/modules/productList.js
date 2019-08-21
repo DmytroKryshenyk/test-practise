@@ -51,5 +51,10 @@ export default {
       state.list[productIndex].quantityInStock += payloads.productQuantity
     }
 
+  },
+  getters: {
+    productList(state) {
+      return state.list
+    }
   }
 };

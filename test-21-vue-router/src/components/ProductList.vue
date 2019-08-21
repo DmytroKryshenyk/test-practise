@@ -1,22 +1,22 @@
 <template>
-  <ul>
-    <li v-for="(item, index) in productList" :key="index">
-      <h4>{{item.title}}</h4>
-      <p>Ціна: {{item.price}}</p>
-      <button
-        v-if="!isProductInCart(item.id_product)"
-        @click="addProductToCart(item.id_product)"
-        type="button"
-        class="add-btn"
-      >Add to Cart</button>
-      <button
-        v-if="isProductInCart(item.id_product)"
-        @click="removeProductFromCart(item.id_product)"
-        type="button"
-        class="remove-btn"
-      >Remove from Cart</button>
-    </li>
-  </ul>
+    <ul>
+      <li v-for="(item, index) in productList" :key="index">
+        <h4>{{item.title}}</h4>
+        <p>Ціна: {{item.price}}</p>
+        <button
+          v-if="!isProductInCart(item.id_product)"
+          @click="addProductToCart(item.id_product)"
+          type="button"
+          class="add-btn"
+        >Add to Cart</button>
+        <button
+          v-if="isProductInCart(item.id_product)"
+          @click="removeProductFromCart(item.id_product)"
+          type="button"
+          class="remove-btn"
+        >Remove from Cart</button>
+      </li>
+    </ul>
 </template>
 
 <script>
@@ -24,14 +24,15 @@ export default {
   name: "ProductList",
   computed: {
     productList() {
-      return this.$store.state.productList.list;
+      return this.$store.getters["productList/productList"];
+    },
+    cartProductList() {
+      return this.$store.getters["cart/cartProductList"];
     }
   },
   methods: {
     addProductToCart(id) {
-      const product = this.$store.state.productList.list.find(
-        elem => elem.id_product === id
-      );
+      const product = this.productList.find(elem => elem.id_product === id);
       if (product === undefined || product.quantityInStock === 0) return;
       const isProductInCart = this.isProductInCart(id);
       if (!isProductInCart) {
@@ -41,9 +42,7 @@ export default {
     },
 
     removeProductFromCart(id) {
-      const product = this.$store.getters["cart/cartProductList"].find(
-        elem => elem.id_product === id
-      );
+      const product = this.cartProductList.find(elem => elem.id_product === id);
       const productQuantity = product.quantity;
       this.$store.commit("cart/removeProductFromCart", id);
       this.$store.commit("productList/returnProductToStock", {
@@ -53,9 +52,7 @@ export default {
     },
 
     isProductInCart(id) {
-      return this.$store.getters["cart/cartProductList"].some(
-        element => element.id_product === id
-      );
+      return this.cartProductList.some(element => element.id_product === id);
     }
   }
 };

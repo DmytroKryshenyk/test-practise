@@ -6,7 +6,6 @@
 
 <script>
 import ProductList from "./ProductList.vue";
-import { scrypt } from "crypto";
 
 export default {
   name: "Product",

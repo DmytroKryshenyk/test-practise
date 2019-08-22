@@ -41,7 +41,7 @@ export default {
       this.$store.commit("formStore/changeValidStatus", payload);
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -14,7 +14,7 @@ export default {
       return this.$store.getters['formStore/progressBar'];
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -3,13 +3,13 @@ export default {
   state: {
     info: [
       {
-        name: "Ім’я",
+        name: "Name",
         value: "",
         pattern: /^[a-zA-Z ]{2,30}$/,
         isValid: false
       },
       {
-        name: "Мобільний",
+        name: "Tel",
         value: "",
         pattern: /^[0-9]{7,14}$/,
         isValid: false
@@ -48,7 +48,8 @@ export default {
         }
       });
       return progressBarPercent;
-    }
+    },
+
   },
   mutations: {
     changeValidStatus(state, payload) {
@@ -66,15 +67,6 @@ export default {
     },
     toggleStateProperty(state, property) {
       state[property] = !state[property];
-    }
-  },
-  actions: {
-    asyncShowResults({ state, commit }) {
-      commit("changeStatePropertyValue", { property: "asyncDataLoading", value: true });
-      setTimeout(() => {
-        commit("changeStatePropertyValue", { property: "asyncDataLoading", value: false });
-        commit("toggleStateProperty", "showSubmitInfo");
-      }, 3000);
     }
   }
 };

@@ -9,19 +9,19 @@
           <td>Сума</td>
         </tr>
         <tr v-for="(item, index) in cartProductList" :key="index">
-          <th>{{item.title}}</th>
-          <td>{{item.price}}</td>
-          <td>{{item.quantity}}</td>
-          <td>{{item.price * item.quantity}}</td>
+          <th>{{ item.title }}</th>
+          <td>{{ item.price }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price * item.quantity }}</td>
         </tr>
       </table>
       <p class="total">
         В сумі до сплати:
-        <span class="total-price">{{totalPrice}}</span>
+        <span class="total-price">{{ totalPrice }}</span>
       </p>
     </div>
-    <p v-if="cartProductList.length === 0" class="empty-cart-message">Ваш кошик порожній</p>
-    <Form v-if="cartProductList.length !== 0"/>
+    <p v-if="cartProductList.length === 0" class="empty-cart-message"> Ваш кошик порожній </p>
+    <Form v-if="cartProductList.length !== 0" />
   </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
       );
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

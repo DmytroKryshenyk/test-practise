@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="formResults" mode="out-in">
-      <form v-if="!showSubmitInfo" @submit.prevent="changeshowSubmitInfo">
+      <form v-if="!showSubmitInfo" @submit.prevent="sendData">
         <h3>Заповніть форму англійською</h3>
         <FormProgressBar />
         <FormList />
@@ -26,8 +26,8 @@ export default {
     FormProgressBar
   },
   methods: {
-    changeshowSubmitInfo() {
-      this.$store.dispatch("formStore/asyncShowResults");
+    sendData() {
+      this.$store.dispatch("sendOrder");
     }
   },
   computed: {
@@ -104,4 +104,3 @@ button {
   }
 }
 </style>
-
